@@ -2,24 +2,23 @@
 import Image from "next/image";
 
 export default function Home() {
-      const handleStartElectron = async () => {
-          try {
-              const response = await fetch("/api/start-electron", {
-                  method: "POST",
-              });
+     const handleStartElectron = async () => {
+         try {
+             const response = await fetch("/api/start-electron", {
+                 method: "POST",
+             });
 
-              const data = await response.json();
+             const data = await response.json();
 
-              if (!response.ok) {
-                  throw new Error(data.error || "Something went wrong");
-              }
+             if (!response.ok) {
+                 throw new Error(data.error || "Something went wrong");
+             }
 
-              alert("Electron started successfully");
-          } catch (error) {
-              console.log(error.message);
-          } finally {
-          }
-      };
+             alert("Electron started successfully");
+         } catch (error) {
+             console.log(error.message);
+         }
+     };
   return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
           <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
